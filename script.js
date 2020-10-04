@@ -57,6 +57,15 @@ function getUserOptions() {
       userCharacters.push(specialCharacters);
   }
 
+  if ((specialCharacterOption === false) && 
+  (numericalValueOption === false) && 
+  (lowerCaseOption === false) && 
+  (upperCaseOption === false))  {
+  
+    alert("You need to select at least one type of character to generate a password!");
+    return;
+}
+
   return;
 }
 
