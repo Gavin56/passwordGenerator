@@ -5,6 +5,39 @@ var numericalValues = ["1", "2", "3", "4", "5", "6", "7", , "8", "9", "0"];
 var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "+", "="];
 
 
+function getUserOptions() {
+  var lowerCaseOption = confirm("Would you like to include lowercase letters?");
+  var upperCaseOption = confirm("Would you like to include uppercase letters?");
+  var numericalValueOption = confirm("Would you like to include numerical values?");
+  var specialCharacterOption = confirm("Would you like to include special characters?");
+
+  if (lowerCaseOption) {
+
+      lowerCaseLetters.join("");
+      userCharacters.push(lowerCaseLetters);
+  }
+
+  if (upperCaseOption) {
+
+      upperCaseLetters.join("");
+      userCharacters.push(upperCaseLetters);
+  }
+
+  if (numericalValueOption) {
+
+      numericalValues.join("");
+      userCharacters.push(numericalValues);
+  }
+
+  if (specialCharacterOption) {
+
+      specialCharacters.join("");
+      userCharacters.push(specialCharacters);
+  }
+
+  return;
+}
+
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
