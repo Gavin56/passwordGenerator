@@ -16,15 +16,15 @@ function generatePassword() {
   userCharacters = [];
   getUserOptions();
    
-  var retVal = "";
+  var password = "";
   var splitCharacters = userCharacters.toString().split(",");
   
   for (var i = 0;  i < length; ++i) {
       var randomIndex = Math.floor(Math.random()*splitCharacters.length);
-      retVal += splitCharacters[randomIndex];
+      password += splitCharacters[randomIndex];
   }
 
-  return retVal;
+  return password;
 }
 
 function getUserOptions() {
