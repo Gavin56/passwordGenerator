@@ -4,6 +4,28 @@ var upperCaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "
 var numericalValues = ["1", "2", "3", "4", "5", "6", "7", , "8", "9", "0"];
 var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "+", "="];
 
+function generatePassword() {
+
+  var length = parseInt(prompt("What will the length of your password be?"));
+
+  if (isNaN(length)===true || length > 128 || length < 8) {
+      alert("Password length must be provided with a number between 8 and 128");
+      return;
+  }
+
+  userCharacters = [];
+  getUserOptions();
+   
+  var retVal = "";
+  var splitCharacters = userCharacters.toString().split(",");
+  
+  for (var i = 0;  i < length; ++i) {
+      var randomIndex = Math.floor(Math.random()*splitCharacters.length);
+      retVal += splitCharacters[randomIndex];
+  }
+
+  return retVal;
+}
 
 function getUserOptions() {
   var lowerCaseOption = confirm("Would you like to include lowercase letters?");
